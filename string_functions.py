@@ -44,7 +44,7 @@ def check_worksheet(wb, ws_num):
 
 
 def display_menu(wb, ws_num, row_start=1, row_end=5, col_start=1, col_end=5):
-    '''Display the main menu of options'''
+    """Display the main menu of options"""
 
     wb, ws_num = check_worksheet(wb, ws_num)
     row_start, row_end = check_rows(row_start, row_end)

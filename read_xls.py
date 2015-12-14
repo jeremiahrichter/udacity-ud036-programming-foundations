@@ -9,6 +9,9 @@ from string_functions import display_rows
 
 
 def main():
+    """main function, reads file from command line, displays rows, shows menu
+    :rtype: None
+    """
     if len(sys.argv) < 2:
         print('Please enter a filename')
         exit(1)
@@ -60,3 +63,6 @@ def main():
         except (NameError, TypeError) as e:
             print(str(e))
             exit(1)
+
+if __name__ == '__main__':
+    main()
