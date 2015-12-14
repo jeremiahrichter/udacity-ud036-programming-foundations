@@ -1,8 +1,9 @@
 import openpyxl as op
 from openpyxl.cell import get_column_letter
 
-ROW_5 = '{0: >10}|{1: >10}|{2: >10}|{3: >10}|{4: >10}|{5: >10}|'
-SEPARATOR = '-----------------------------------------------------------------------------------------'
+ROW_5 = '{0: >10}||{1: >10}|{2: >10}|{3: >10}|{4: >10}|{5: >10}|'
+HEADER_SEPARATOR = '==================================================================='
+SEPARATOR = '-------------------------------------------------------------------'
 
 CHOICES = '''
     displayed above are rows {0} to {1}, columns {2} to {3},
@@ -67,7 +68,8 @@ def display_rows(wb, ws_num, row_start=1, row_end=5, col_start=1, col_end=5):
     col_letters = [get_column_letter(i) for i in range(col_start, col_end + 1)]  # get 5 column letters
 
     print(ROW_5.format("", *col_letters))
-    print(SEPARATOR)
+    print(HEADER_SEPARATOR)
+
     ws = wb.worksheets[ws_num]
 
     for row in row_nums:  # truncates and prints up to row_end, col_end number of cell values
