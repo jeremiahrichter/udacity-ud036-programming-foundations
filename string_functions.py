@@ -45,7 +45,14 @@ def check_worksheet(wb, ws_num):
 
 
 def display_menu(wb, ws_num, row_start=1, row_end=5, col_start=1, col_end=5):
-    """Display the main menu of options"""
+    """Display the main menu of options
+    :param col_end: ending index for columns
+    :param col_start: starting index for columns
+    :param row_end: ending index for rows
+    :param row_start: starting index for rows
+    :param ws_num: index of worksheet
+    :param wb: openpyxl.workbook.Workbook object
+    """
 
     wb, ws_num = check_worksheet(wb, ws_num)
     row_start, row_end = check_rows(row_start, row_end)
@@ -59,7 +66,14 @@ def display_menu(wb, ws_num, row_start=1, row_end=5, col_start=1, col_end=5):
 
 
 def display_rows(wb, ws_num, row_start=1, row_end=5, col_start=1, col_end=5):
-    '''display the specified rows/columns of the spreadsheet'''
+    """Display the specified rows/columns of the spreadsheet
+    :param col_end: ending index for columns
+    :param col_start: starting index for columns
+    :param row_end: ending index for rows
+    :param row_start: starting index for rows
+    :param ws_num: index of worksheet
+    :param wb: openpyxl.workbook.Workbook object
+    """
 
     wb, ws_num = check_worksheet(wb, ws_num)
     row_start, row_end = check_rows(row_start, row_end)
