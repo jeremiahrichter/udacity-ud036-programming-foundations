@@ -18,7 +18,7 @@ else:
         # print('Opened file %s' % wb.name)
 
         if wb is not None:
-            exit = False
+            exitChosen = False
             row_start = 1
             row_end = 5
             ws_num = 0
@@ -27,7 +27,7 @@ else:
 
             display_rows(wb, ws_num, row_start, row_end, col_start, col_end)
 
-            while not exit:
+            while not exitChosen:
 
                 choice = input('choice: ')
                 choice = choice if len(choice) == 1 else choice[0]
@@ -49,14 +49,14 @@ else:
                     row_start -= 5
                     row_end -= 5
                 elif choice == 'x':
-                    exit = True
+                    exitChosen = True
                 else:
                     print('invalid choice, please choose one of the options provided\n')
                     display_menu(wb, ws_num, row_start, row_end, col_start, col_end)
                     continue
-                if not exit:
+                if not exitChosen:
                     display_rows(wb, ws_num, row_start, row_end, col_start, col_end)
 
             sys.exit(0)
-    except:
+    except Exception as e:
         sys.exit(1)
